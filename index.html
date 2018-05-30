@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journey to the White House</title>
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/leaflet.css" />
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+  $( function() {
+    var handle = $( "#custom-handle" );
+    $( "#slider" ).slider({
+      create: function() {
+        handle.text( $( this ).slider( "value") );
+      },
+      slide: function( event, ui ) {
+        handle.text( ui.value );
+      }
+    });
+  } );
+  </script>
+</head>
+<body>
+
+<div id=container class="content-container">
+  <div id="slider">
+    <div id="custom-handle" class="ui-slider-handle"></div>
+  </div>
+<div class="sidebar">
+    <h1 class="title">Journey to the White House</h1>
+    <p id="instructions" class="">(Use the slider above to select a President and test your knowledge)</p>
+    <p id="born" class=""></p>
+    <p id="degree" class=""></p>
+    <button id="button" class="">Click here for answer</button>
+    <div id="answer" class="">
+    <p id="pres_name" class=""></p>
+    <img id="image_link" src="">
+    <p id="footnote" class="">(Note: Graduate studies are not included.)</p>
+    </div>
+</div>
+<!-- Map -->
+<div id="map" class="map"></div>
+<!-- Legend -->
+<div class="legend"></div>
+<!-- Javascript Imports -->
+<script src="js/underscore.js"></script>
+<script src="js/slider_ui.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet-src.js"></script>
+<script src="js/main.js"></script>
+
+</div>
+
+</body>
+</html>
